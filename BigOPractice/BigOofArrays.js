@@ -8,3 +8,14 @@
     //Removal
     //Searching: O(n)
     //Access: O(1)
+
+//Array Methods:
+    //push: O(1)
+    //pop: O(1)
+    //shift: O(n)
+    //unshift: O(n)
+    //concat: O(n) (where n equals is the size one of the arrays)
+    //slice: O(n)
+    //splice: O(n)
+    //sort: O(n * log(n))
+    //forEach/map/filter/reduce/etc: O(n)
