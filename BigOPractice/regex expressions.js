@@ -1,0 +1,1 @@
+//to test if something is alphanumeric: /[a-zo-0]/.test(char)
