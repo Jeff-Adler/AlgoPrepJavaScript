@@ -10,3 +10,7 @@
 //if (key in Obj), if (!(key in Obj)) //checks if the Obj has the key
 //Safer version: myObj.hasOwnProperty(key)
 
+//if (arr === []) DOES NOT DETECT EMPTY ARRAYS, because is strict equality, 
+//not just identity operator
+//you can use: if(arr.length === 0) or something of that sort
+
