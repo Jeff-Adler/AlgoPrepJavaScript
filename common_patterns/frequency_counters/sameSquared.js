@@ -59,10 +59,10 @@ const sameSquaredQuick = (arr1,arr2) => {
     let frequencyCounter1 = {}
     let frequencyCounter2 = {}
     for (const element of arr1) {
-        frequencyCounter1[element] = (frequencyCounter1[element]++ || 1)
+        frequencyCounter1[element] = ++(frequencyCounter1[element] || 1)
     }
     for (const element of arr2) {
-        frequencyCounter2[element] = (frequencyCounter2[element]++ || 1)
+        frequencyCounter2[element] = ++(frequencyCounter2[element] || 1)
     }
     for (let key in frequencyCounter1) {
         if (!frequencyCounter2.hasOwnProperty(key ** 2)) {
