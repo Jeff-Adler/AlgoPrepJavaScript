@@ -37,9 +37,9 @@ const sameSquared = (arr1,arr2) => {
         return false
     }
     //loop 1
-    for (const i of arr1) {
+    for (const element of arr1) {
         //loop 2
-        let correctIndex = arr2.indexOf(arr1[i] ** 2)
+        let correctIndex = arr2.indexOf(element ** 2)
         //indexOf returns -1 if no value isn't found in array
         if (correctIndex === -1) {
             return false
@@ -49,3 +49,8 @@ const sameSquared = (arr1,arr2) => {
     }
     return true
 }
+
+const arr1 = [1,2,3,2]
+const arr2 = [4,9,4,1]
+
+console.log(sameSquared(arr1,arr2))
