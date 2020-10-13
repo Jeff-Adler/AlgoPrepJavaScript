@@ -41,3 +41,33 @@ console.log("Should be True:", isAnagram(arr1,arr2))
 console.log("Should be False:", isAnagram(arr1,arr3))
 console.log("Should be False:", isAnagram(arr1,arr4))
 console.log("Should be False:", isAnagram(arr1,arr5))
+
+//alternative solution
+const isAnagram2 = (str1, str2) => {
+    if (str1.length !== str2.length) {
+        return false
+    }
+    let lookup = {}
+    for (const element of str1) {
+        lookup[element] ? lookup[element] += 1 : lookup[element] = 1
+    }
+    for (const element of str2) {
+        if (!lookup[element]) {
+            return false
+        } else {
+            lookup[element] -= 1
+        }
+    }
+    return true
+}
+
+const array1 = ["j","e","f","f"]
+const array2 = ["f","f","e","j"]
+const array3 = [,"f","e","j"]
+const array4 = [,"f","e","j","z"]
+const array5 = ["f","f","e","j","j"]
+
+console.log("Should be True:", isAnagram2(array1,array2))
+console.log("Should be False:", isAnagram2(array1,array3))
+console.log("Should be False:", isAnagram2(array1,array4))
+console.log("Should be False:", isAnagram2(array1,array5))
