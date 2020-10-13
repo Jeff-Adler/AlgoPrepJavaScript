@@ -3,7 +3,7 @@
 
 //naive solution: this will not at all scale if the array and n get big enough. 
 //It will basically be quadratic time.
-const maxSubarraySum = (arr, n) => {
+const maxSubarraySumSlow = (arr, n) => {
     if (n > arr.length) {
         return null
     }
@@ -23,9 +23,10 @@ const maxSubarraySum = (arr, n) => {
 
 arr1 = [0,2,3,6,7,8,3,4]
 
-console.log(maxSubarraySum(arr1,3))
+console.log(maxSubarraySumSlow(arr1,3))
 
-//O(N) solution
+//O(N) solution: rather than looping from every value in an array,
+//you subtract the first number in the window, and add the next
 const maxSubarraySum = (arr,num) => {
     let maxSum = 0
     let tempSum = 0
@@ -38,7 +39,11 @@ const maxSubarraySum = (arr,num) => {
     tempSum = maxSum
     for (let i = num; i < arr.length ; i++) {
         tempSum = tempSum - arr[i - num] + arr[i]
-        maxSUm = Math.max(maxSum, tempSum)
+        maxSum = Math.max(maxSum, tempSum)
     }
     return maxSum
 }
+
+arr2 = [0,2,3,6,7,8,3,4]
+
+console.log(maxSubarraySum(arr2,3))
