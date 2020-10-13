@@ -6,3 +6,6 @@
 //[...array]
 //++var vs var++
 //var z = x || y
+
+//if (key in Obj), if (!(key in Obj)) //checks if the Obj has the key
+//Safer version: myObj.hasOwnProperty(key)
