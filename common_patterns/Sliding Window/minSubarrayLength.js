@@ -6,7 +6,7 @@ const minSubArrayLength = (arr,num) => {
     //i is the window size
     for (let i = 0; i < arr.length ; i++) {
         let temp = 0
-        for (k = 0 ; k <= i ; k++) {
+        for (let k = 0 ; k <= i ; k++) {
             temp += arr[k]
         }
         for (let j = 1 ; j < arr.length - i; j++) {
