@@ -7,6 +7,7 @@ const isSubsequence = (str1, str2) => {
     var i = 0;
     var j = 0;
     if (!str1) return true;
+    //this works because its okay if the subsequence has characters intervening in the superstring
     while (j < str2.length) {
       if (str2[j] === str1[i]) {
         i++; 
