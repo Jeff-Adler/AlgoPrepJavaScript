@@ -7,6 +7,7 @@
     //If no characters repeat: grow by 1
     //If characters repeat, shrink by 1
 
+    //To make this O(n), just use an object instead of a subString to keep track of seen characters
 const findLongestSubstring = (str) => {
     if (str === "") {
         return 0
