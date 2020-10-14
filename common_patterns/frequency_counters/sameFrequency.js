@@ -21,10 +21,10 @@ const sameFrequency = (num1, num2) => {
     if (num1.length !== num2.length) {
         return false
     }
-    str1 = num1.toString()
-    str2 = num2.toString()
-    frequencyCounter1 = {}
-    frequencyCounter2 = {}
+    const str1 = num1.toString()
+    const str2 = num2.toString()
+    const frequencyCounter1 = {}
+    const frequencyCounter2 = {}
     for (const digit of str1 ) {
         frequencyCounter1[digit] ? ++frequencyCounter1[digit] : frequencyCounter1[digit] = 1
     }
