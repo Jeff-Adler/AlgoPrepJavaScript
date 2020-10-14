@@ -21,11 +21,17 @@ Call Stack:
 - When JS sees the return keyword, or when function ends, the compiler will remove(pop)
 - can follow a call stack in Chrome Dev Tools
 
-Help method recursion vs. pure recursion
-
 How they work:
 
 2 Components:
 
 - Base Case: Condition when the recursion ends
 - Different Input: Every time recursive function is called, the input must be modified in some way
+
+Helper method recursion vs. pure recursion
+
+Helper method recursion:
+
+- recursive function nested inside an outer function
+- used to e.g. sort or search through an array
+- or e.g. find all odd values in an array
