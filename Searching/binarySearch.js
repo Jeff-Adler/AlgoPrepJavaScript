@@ -16,6 +16,7 @@ const binarySearchRecursive = (arr, val, left = 0, right = arr.length - 1) => {
     if (arr[middle] === val) {
         return middle
     } else if (arr[middle] > val) {
+        //ideal solution would not include this
         if (left === 0 && right === 1) {
             if (arr[0] === val) {
                 return 0
@@ -23,9 +24,9 @@ const binarySearchRecursive = (arr, val, left = 0, right = arr.length - 1) => {
                 middle = 0
             }
         }
-        return binarySearchRecursive(arr,val,left,middle)
+        return binarySearchRecursive(arr,val,left,middle - 1)
     } else if (arr[middle] < val) {
-        return binarySearchRecursive(arr,val,middle,right)
+        return binarySearchRecursive(arr,val,middle + 1,right)
     }
     
 }
@@ -36,3 +37,18 @@ console.log("Should return 4: ", binarySearchRecursive([1,2,3,4,5],5))
 console.log("Should return -1: ", binarySearchRecursive([1,2,3,4,5],6))
 console.log("Should return -1: ", binarySearchRecursive([1,2,3,4,5],0))
 console.log("Should return 0: ", binarySearchRecursive([1,2,3,4,5],1))
+
+function binarySearch(arr,elem) {
+    let start = 0
+    let end = arr.length - 1
+    let middle = Math.floor((start + end) / 2)
+    while(arr[middle] !== elem && start <= end) {
+        if (elem < arr[middle]) {
+            end = middle - 1
+        } else {
+            start = middle + 1
+        }
+        middle = Math.floor((start+end)/2)
+    }
+    return arr[middle] === elem ? middle : -1
+}
