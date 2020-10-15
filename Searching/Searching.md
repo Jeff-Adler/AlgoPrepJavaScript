@@ -1,4 +1,6 @@
-Linear search on arrays: if list is unsorted, this is best option
+Linear search on arrays:
+if list is unsorted, this is best option
+
 Time Complexity: O(n) (best: O(1), worst: O(n), average: O(n))
 
 - indexOf
@@ -6,8 +8,15 @@ Time Complexity: O(n) (best: O(1), worst: O(n), average: O(n))
 - find
 - findIndex
 
-Binary search on sorted array: find entry at midpoint of SORTED array, if target is less than entry, take first half of array. if target is more than entry,
+Binary search on sorted array:
+find entry at midpoint of SORTED array, if target is less than entry, take first half of array. if target is more than entry,
 take second half of array. Repeat this recursively
+
+Time Complexity: O(log n)
+
+- Average/Worst case: O(log n)
+- Best case: O(1)
+
 Psuedocode:
 
 - Function accepts a sorted array and a value.

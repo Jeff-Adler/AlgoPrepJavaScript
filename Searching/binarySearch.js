@@ -37,6 +37,9 @@ console.log("Should return 4: ", binarySearchRecursive([1,2,3,4,5],5))
 console.log("Should return -1: ", binarySearchRecursive([1,2,3,4,5],6))
 console.log("Should return -1: ", binarySearchRecursive([1,2,3,4,5],0))
 console.log("Should return 0: ", binarySearchRecursive([1,2,3,4,5],1))
+console.log("Should return -1: ", binarySearchRecursive([1,2,4,5,6],3))
+console.log("Should return -1: ", binarySearchRecursive([1,2,4,5,],3))
+console.log("Should return 2: ", binarySearchRecursive([1,2,4,5,],4))
 
 function binarySearch(arr,elem) {
     let start = 0
