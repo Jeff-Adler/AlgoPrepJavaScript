@@ -16,6 +16,7 @@ Time Complexity: O(log n)
 
 - Average/Worst case: O(log n)
 - Best case: O(1)
+  Crucial point: for an array of 16 elements, it will take 4 steps to find that the value is never found (which is the worst case). To get to 5 steps, we'd have to DOUBLE the size of our array, to 32
 
 Psuedocode:
 
