@@ -33,6 +33,8 @@ Psuedocode:
 - eliminate half of the remaining elements at a time
 - must be sorted
 
-Naive string searching algorithm
+Naive string searching algorithm: used to see if substring is in string
+
+Function, stringSearch, takes string and substring. Loop over longest string. if character in string matches first character in substring, loop over substring, to see if following characters match the following characters of the longer string
 
 KMP string searching algorithm
