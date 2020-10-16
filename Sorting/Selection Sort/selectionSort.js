@@ -2,12 +2,13 @@ const selectionSort = (arr) => {
     let minIndex
     for (let i = 0; i < arr.length; i++) {
         minIndex = i
-        for (let j = i ; j < arr.length; j++) {
+        for (let j = i + 1 ; j < arr.length; j++) {
             if (arr[j] < arr[i])  {
                 minIndex = j
             } 
         }
-        swap(arr,i,minIndex)
+        //this condition is not strictly necessary, it just prevents swapping a value with itself.
+        if (i !== minIndex) swap(arr,i,minIndex)
     }
     return arr
 }
