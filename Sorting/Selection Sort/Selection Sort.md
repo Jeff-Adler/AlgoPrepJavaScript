@@ -1,0 +1,1 @@
+Selection Sort: like bubble sort, but places shorted value in the beginning of array, rather than largest at the end. Doesnt use swap. Swap works different: iterate through array from beginning, and once smallest value is found, swap it with first value (then second-largest with second value, etc.)
