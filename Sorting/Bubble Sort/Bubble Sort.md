@@ -14,3 +14,8 @@ Psuedocode: (assume array of numbers)
   - shrinks space
 - start inner loop with variable called from beginning until i - 1
 - if arr[j] is greater than [arr[j+1],swap those two values
+
+Optimization:
+
+- (for a nearly-sorted array,) short circuit the function once array is fully sorted, even if it hasnt finished looping through the (already-sorted) array
+  - implementation:if, at the last iteration through the array, no swaps were made, end the loop
