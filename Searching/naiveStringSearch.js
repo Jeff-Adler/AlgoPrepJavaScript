@@ -31,3 +31,5 @@ console.log("Should return 2: " , naiveStringSearch("jefef","f"))
 console.log("Should return 0: " , naiveStringSearch("jefef","p"))
 console.log("Should return 1: " , naiveStringSearch("abcxxjeffx","jeff"))
 console.log("Should return 2: " , naiveStringSearch("jeffxxjeffx","jeff"))
+console.log("Should return 1: " , naiveStringSearch("abcxxjjjjjjeffx","jeff"))
+
