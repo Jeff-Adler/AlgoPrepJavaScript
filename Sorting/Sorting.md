@@ -8,3 +8,7 @@ JavaScript sort() function:
     - if it returns a negative number, a should come before b
     - if it returns a positive number, a should come after b
     - if it returns -, a and b are the same as far as sorting is concerned
+
+Bubble vs. Selection vs. Insertion
+
+- basically all quadratic
