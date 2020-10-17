@@ -30,7 +30,7 @@ console.log("Should return [.]100[.]50[.]: ", defangIPaddr(".100.50."))
 console.log("Should return [.]100[.][.]50[.]: ", defangIPaddr(".100..50."))
 
 //Good solution
-var defangIPaddr = function(a, i = 0) {
+var defangIPaddr2 = function(a, i = 0) {
     const c = a[i];
     if (c === undefined) {
         return '';
@@ -44,3 +44,6 @@ var defangIPaddr = function(a, i = 0) {
 };
 
 //Regex solution
+var defangIPaddr3 = function(address) {
+    return address.replace(/\./g, '[.]');
+};
