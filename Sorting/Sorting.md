@@ -29,3 +29,19 @@ Insertion: finds a value, inserts into the right place
 
 - good at live streaming data
 - good with semi-sorted data
+
+Main limitations of standard sort algorithms:
+
+- Do not scale with larger data sets
+
+Intermediate Sorting Algorithms:
+
+- Can improve time complexity from O(n^2) to O(n log n), which is significantly better than quadratic, even if worse than O(N)
+- much less simple than the quadratic algorithms
+- not intuitive to humans
+
+Merge Sort:
+
+Quick Sort
+
+Radix Sort
