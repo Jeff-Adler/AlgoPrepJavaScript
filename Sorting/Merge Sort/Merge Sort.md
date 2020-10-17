@@ -23,6 +23,8 @@ Why O(N log n):
 - n = number of comparisons
 - log n = number of 'splits'
 
+- why multiplication (of n and log n): for every split, you have that many comparisons
+
 32
 16 16
 8 8 8 8

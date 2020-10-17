@@ -12,6 +12,7 @@ JavaScript sort() function:
 Bubble vs. Selection vs. Insertion
 
 - Often preferred for smaller datasets
+- if space complexity is preferred, these can be preferred to complex sorting algos
 
 - basically all quadratic
   - bubble & insertion: best case O(N), otherwise all O(n^2)
@@ -47,3 +48,5 @@ Quick Sort
 Radix Sort
 
 \*\*BubbleSort and Insertion Sort are actually FASTER than MergeSort and such, when array is nearly sorted. They are better than just equivalent
+
+Best you can get for data-agnostic sorting: O(n log n)
