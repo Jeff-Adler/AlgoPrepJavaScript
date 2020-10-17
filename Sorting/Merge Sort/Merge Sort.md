@@ -10,3 +10,24 @@ Continually split arrays in half until you have only single-element arrays. Now 
 So, you then have a bunch of two element arrays that are ALREADY sorted. Now you combine two-element arrays together. So you can make far fewer comparisons to connect [x,y], [a,b] arrays.
 
 Then, combine arrays of 4 elements together, and so forth. The main point is, at every point you sort arrays, most of the elements are already sorted in the subarrays.
+
+Time Complexity:
+
+- Best: O(n log n)
+- Average: O(n log n)
+- Worst: O(n log n)
+- Space: O(n)
+
+Why O(N log n):
+
+- n = number of comparisons
+- log n = number of 'splits'
+
+32
+16 16
+8 8 8 8
+4 4 4 4 4 4 4 4
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+
+- 32(n) total one,element arrays. 5 (log n) splits to get there
