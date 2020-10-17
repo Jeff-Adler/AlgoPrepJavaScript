@@ -45,3 +45,5 @@ Merge Sort:
 Quick Sort
 
 Radix Sort
+
+\*\*BubbleSort and Insertion Sort are actually FASTER than MergeSort and such, when array is nearly sorted. They are better than just equivalent
