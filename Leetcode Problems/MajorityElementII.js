@@ -16,7 +16,33 @@
 
 //Question: should we round to whole numbers?
 
+//ONLY ONE OR TWO ELEMENTS MAX CAN APPEAR MORE THAN n/3 Times, since its a third!
+//Optimized: There can only be max two candidates that appear more than n/3 times. Thus, you can push to an array and still take up O(1) space.
+
+//Optimized
 var majorityElement = function(nums) {
+    const min = nums.length/3
+    const frequencyCounter = {}
+    const set = []
+    
+    for (const element of nums) {
+        if (frequencyCounter[element]) {
+            ++frequencyCounter[element]
+        } else {
+            frequencyCounter[element] = 1
+        }
+    }
+    
+    for (const key in frequencyCounter) {
+        if (frequencyCounter[key] > min) set.push(key)
+        //this is unnecessary for smaller data sets, but could speed up the function
+        //if you have an object with many key/value pairs
+        if (set.length >= 2) return set
+    }
+    
+    return set
+};
+var majorityElementOriginal = function(nums) {
     const min = nums.length/3
     const frequencyCounter = {}
     
