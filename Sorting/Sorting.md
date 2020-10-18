@@ -50,3 +50,12 @@ Radix Sort
 \*\*BubbleSort and Insertion Sort are actually FASTER than MergeSort and such, when array is nearly sorted. They are better than just equivalent
 
 Best you can get for data-agnostic sorting: O(n log n)
+
+- Mathematocal proof about comparison sorting!!! Impossible to do better than O(log n)
+
+- Radix Sort: NOT a comparison sort
+  - escapes lower bound on comparison sorting of O(n log n)
+
+Non-comparison sorting: takes advantage of specific kinds of data
+
+- Integer Sorting
