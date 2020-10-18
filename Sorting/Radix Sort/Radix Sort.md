@@ -20,3 +20,18 @@ How it works:
 Helper Methods
 
 - getDigit(num,place): returns digit in num at given place value (in other words, return what value is stored in a given data)
+
+Time Complexity: where k is # of digits...
+
+- Best: O(nk)
+- Average: O(nk)
+- Worst: O(nk)
+  - so number of digits can really affect runtime
+  - Controversy:
+    - Apparently there is some argument that, based on how bits are stored in memory, then O(nk) actually becomes O(n log n)
+    - Counter argument: well, actually comparison sort has shortcomings to about memory
+- Basically, Radix Sort can be faster comparison sort IF k is sufficiently small
+- Also just fairly easy to understand
+
+Space Complexity:
+O(n + k)
