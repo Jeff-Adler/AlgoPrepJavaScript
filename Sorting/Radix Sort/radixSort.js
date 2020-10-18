@@ -20,11 +20,26 @@ const getDigit = (num,place) => {
 
 //counts number of digits
 const digitCount = (num, counter = 0) => {
-    if (num < 1) return counter
+    if (Math.abs(num) < 1) return counter
     return digitCount(num/10,++counter)
+}
+
+const digitCountNonRecursive = (num) => {
+    if (num === 0) return 1
+    return Math.floor(Math.log10(Math.abs(num))) + 1
 }
 
 console.log("Should return 1: ", digitCount(1))
 console.log("Should return 2: ", digitCount(43))
 console.log("Should return 3: ", digitCount(847))
 console.log("Should return 4: ", digitCount(5847))
+console.log("Should return 4: ", digitCount(-5847))
+console.log("Should return 2: ", digitCount(10))
+console.log("Should return 3: ", digitCount(100))
+console.log("Should return 3: ", digitCount(-100))
+
+
+// console.log("Should return 1: ", digitCountNonRecursive(1))
+// console.log("Should return 2: ", digitCountNonRecursive(43))
+// console.log("Should return 3: ", digitCountNonRecursive(847))
+// console.log("Should return 4: ", digitCountNonRecursive(5847))
