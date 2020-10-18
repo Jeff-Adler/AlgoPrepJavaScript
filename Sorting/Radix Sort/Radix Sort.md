@@ -16,3 +16,7 @@ How it works:
   - if number has no digit in that position, put in the zero bucket
 - number of times process is repeated = number of digits of largest number in the data
 - no two numbers are ever compared. They are thrown into buckets, and ordered however they were thrown in.
+
+Helper Methods
+
+- getDigit(num,place): returns digit in num at given place value (in other words, return what value is stored in a given data)
