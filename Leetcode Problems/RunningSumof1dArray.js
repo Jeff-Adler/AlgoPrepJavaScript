@@ -18,6 +18,12 @@ var runningSum = function(nums) {
     return nums
 };
 
+//fancier but slower solution:
+var runningSum = function(nums) {
+    let total = 0
+    return nums.map((num) => total += num)
+};
+
 //Sample Outputs:
 console.log("Should return [1,3,6,10]: ", runningSum([1,2,3,4]))
 console.log("Should return [1,2,3,4,5]: ", runningSum([1,1,1,1,1]))
