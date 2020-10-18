@@ -22,7 +22,8 @@ const getDigit = (num,place) => {
 const radixSort = (nums) => {
 
     for (let k = 0 ; k <= mostDigits(nums) ; k++) {
-        let buckets = [[],[],[],[],[],[],[],[],[],[]]
+        // let buckets = [[],[],[],[],[],[],[],[],[],[]]
+        let buckets = Array.from({length:10},()=>[])
         for (const element of nums) {
             if (getDigit(element,k)) {
                 buckets[getDigit(element,k)].push(element)
@@ -30,12 +31,12 @@ const radixSort = (nums) => {
                 buckets[0].push(element)
             }
         }
-        nums = []
-        for (const element of buckets) {
-            nums = nums.concat(element)
-        }
+        nums = [].concat(...buckets)
+        // nums = []
+        // for (const element of buckets) {
+        //     nums = nums.concat(element)
+        // }
     }
-
     return nums
 }
 
