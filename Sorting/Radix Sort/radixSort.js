@@ -19,27 +19,46 @@ const getDigit = (num,place) => {
 // console.log("Should return 0: ", getDigit(12345,5))
 
 //counts number of digits
-const digitCount = (num, counter = 0) => {
+const digitCountRecursive = (num, counter = 0) => {
     if (Math.abs(num) < 1) return counter
     return digitCount(num/10,++counter)
 }
 
-const digitCountNonRecursive = (num) => {
+const digitCount = (num) => {
     if (num === 0) return 1
     return Math.floor(Math.log10(Math.abs(num))) + 1
 }
 
-console.log("Should return 1: ", digitCount(1))
-console.log("Should return 2: ", digitCount(43))
-console.log("Should return 3: ", digitCount(847))
-console.log("Should return 4: ", digitCount(5847))
-console.log("Should return 4: ", digitCount(-5847))
-console.log("Should return 2: ", digitCount(10))
-console.log("Should return 3: ", digitCount(100))
-console.log("Should return 3: ", digitCount(-100))
+// console.log("Should return 1: ", digitCount(1))
+// console.log("Should return 2: ", digitCount(43))
+// console.log("Should return 3: ", digitCount(847))
+// console.log("Should return 4: ", digitCount(5847))
+// console.log("Should return 4: ", digitCount(-5847))
+// console.log("Should return 2: ", digitCount(10))
+// console.log("Should return 3: ", digitCount(100))
+// console.log("Should return 3: ", digitCount(-100))
 
 
 // console.log("Should return 1: ", digitCountNonRecursive(1))
 // console.log("Should return 2: ", digitCountNonRecursive(43))
 // console.log("Should return 3: ", digitCountNonRecursive(847))
 // console.log("Should return 4: ", digitCountNonRecursive(5847))
+
+//given an array of numbers, returns the number of digits in the largest numbers in the list
+const mostDigits = (nums) => {
+    maxDigits = 0
+    for (const number of nums) {
+        if (digitCount(number) > maxDigits) maxDigits = digitCount(number)
+    }
+    return maxDigits
+}
+
+const mostDigitsRecursive = (nums,maxDigits = 0) => {
+    if (nums.length === 0) return maxDigits
+    if (digitCount(nums[0]) > maxDigits) maxDigits = digitCount(nums[0])
+    return mostDigits(nums.splice(1),maxDigits)
+}
+
+console.log("Should return 4: ", mostDigits([1234,56,7]))
+console.log("Should return 5: ", mostDigits([1,1,11111,1]))
+console.log("Should return 2: ", mostDigits([12,34,56,78]))
