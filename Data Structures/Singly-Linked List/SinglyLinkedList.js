@@ -49,15 +49,44 @@ class SinglyLinkedList {
         const removedHead = this.head
         this.head = this.head.next
         this.length--
+        if (this.length === 0) {
+            this.tail = null
+        }
         return removedHead
+    }
+
+    unshift(val){
+        const node = new Node(val)
+        node.next = this.head
+        this.head = node
+        if (this.length === 0) this.tail = node
+        this.length++
+        return this
+    }
+
+    get(index){
+        if (index < 0 || index >= this.length) return null
+        let counter = index
+        let pointer = this.head
+        while (counter > 0) {
+            pointer = pointer.next
+            counter--
+        }
+        return pointer
     }
 }
 
 var list = new SinglyLinkedList()
 list.push("Hello")
 list.push("Goodbye")
-list.push("Dear")
-console.log(list)
-console.log(list.shift())
-console.log(list.shift())
-console.log(list)
+// list.push("Dear")
+// console.log(list)
+// console.log(list.unshift("Ah, "))
+var list2 = new SinglyLinkedList()
+console.log(list2.unshift("Cream"))
+console.log(list2.unshift("Whipped"))
+console.log(list2.unshift("Delicious"))
+console.log(list2.get(0))
+console.log(list2.get(2))
+console.log(list2.get(5))
+
