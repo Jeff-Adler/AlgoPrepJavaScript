@@ -110,6 +110,21 @@ class SinglyLinkedList {
         this.length--
         return removedNode
     }
+
+    reverse(){
+        var node = this.head;
+        this.head = this.tail;
+        this.tail = node;
+        var next;
+        var prev = null;
+        for(var i = 0; i < this.length; i++){
+          next = node.next;
+          node.next = prev;
+          prev = node;
+          node = next;
+        }
+        return this;
+      }
 }
 
 var list = new SinglyLinkedList()
@@ -131,7 +146,9 @@ console.log(list2.insert(0,"Mahogany"))
 // console.log(list2)
 console.log(list2.remove(2))
 console.log(list2.remove(0))
-console.log(list2)
+console.log(list2.head)
+console.log(list2.reverse())
+console.log(list2.head)
 
 
 
