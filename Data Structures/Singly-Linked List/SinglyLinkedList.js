@@ -34,9 +34,22 @@ class SinglyLinkedList {
             pointer = pointer.next
         }
         this.tail = pointer
+        const removedNode = pointer.next
         pointer.next = null
         this.length--
-        return this
+        if (this.length === 0) {
+            this.head = null
+            this.tail = null
+        }
+        return removedNode
+    }
+
+    shift(){
+        if (this.length === 0) return undefined
+        const removedHead = this.head
+        this.head = this.head.next
+        this.length--
+        return removedHead
     }
 }
 
@@ -45,5 +58,6 @@ list.push("Hello")
 list.push("Goodbye")
 list.push("Dear")
 console.log(list)
-console.log(list.pop())
-console.log(list.pop())
+console.log(list.shift())
+console.log(list.shift())
+console.log(list)
