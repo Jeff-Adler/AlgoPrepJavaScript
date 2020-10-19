@@ -112,12 +112,12 @@ class SinglyLinkedList {
     }
 
     reverse(){
-        var node = this.head;
+        let node = this.head;
         this.head = this.tail;
         this.tail = node;
-        var next;
-        var prev = null;
-        for(var i = 0; i < this.length; i++){
+        let next;
+        let prev = null;
+        for(let i = 0; i < this.length; i++){
           next = node.next;
           node.next = prev;
           prev = node;

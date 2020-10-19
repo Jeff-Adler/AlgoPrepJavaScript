@@ -22,7 +22,7 @@ Lists vs Arrays
 Lists:
 
 - No indexes!
-- connecred via nodes with a Next pointer
+- connected via nodes with a Next pointer
 - Random access is not allowed (can't just get nth element and get it right away without searching)
 
 Arrays
@@ -30,3 +30,14 @@ Arrays
 - indexed in order!
 - insertion and deletion can be expensive
 - Can quickly be accessed at specific index
+
+Time Complexity:
+
+- Insertion: O(1)
+- Removal:
+  - O(1) if removing from the beginning
+  - O(n) if removing from the end (because you still have to find the element before this.tail)
+- Searching: O(n)
+- Access: O(n)
+
+LinkedLists really just excel at insertion and removal
