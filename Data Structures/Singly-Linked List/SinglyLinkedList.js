@@ -86,22 +86,29 @@ class SinglyLinkedList {
     }
 
     insert(index,val){
-        if (index < 0 || index > this.length) return false
-        if (index === this.length) {
-            //push will reassign head/tail
-            this.push(val)
-        } else if (index === 0) {
-            //unshift will reassign head/tail
-            this.unshift(val)
-        } else {
-            let node = new Node(val)
-            let preNode = this.get(index - 1)
-            let postNode = preNode.next
-            preNode.next = node
-            node.next = postNode
-            this.length++
-        }
+        if (index < 0 || index >= this.length) return false
+        if (index === this.length) return !!this.push(val) 
+        if (index === 0) return !!this.unshift(val)
+       
+        let node = new Node(val)
+        let preNode = this.get(index - 1)
+        let postNode = preNode.next
+        preNode.next = node
+        node.next = postNode
+        this.length++
         return true
+    }
+
+    remove(index){
+        if (index < 0 || index >= this.length) return false
+        if (index === this.length - 1) return this.pop()
+        if (index === 0) return this.shift()
+
+        const preNode = this.get(index - 1)
+        const removedNode = preNode.next
+        preNode.next = preNode.next.next
+        this.length--
+        return removedNode
     }
 }
 
@@ -116,9 +123,15 @@ console.log(list2.unshift("Cream"))
 console.log(list2.unshift("Whipped"))
 console.log(list2.unshift("Delicious"))
 console.log(list2.set(0,"subpar"))
-console.log(list2)
+// console.log(list2)
 // console.log(list2.set(7,"subpar"))
 console.log(list2.insert(1,"rich"))
+// console.log(list2)
+console.log(list2.insert(0,"Mahogany"))
+// console.log(list2)
+console.log(list2.remove(2))
+console.log(list2.remove(0))
 console.log(list2)
+
 
 
