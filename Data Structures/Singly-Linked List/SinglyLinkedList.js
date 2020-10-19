@@ -24,6 +24,19 @@ class SinglyLinkedList {
         this.head ? this.tail.next = node : this.head = node
         this.tail = node
         this.length++
+        return this
+    }
+
+    pop(){
+        if (this.length === 0) return undefined
+        let pointer = this.head
+        while (pointer.next !== this.tail) {
+            pointer = pointer.next
+        }
+        this.tail = pointer
+        pointer.next = null
+        this.length--
+        return this
     }
 }
 
@@ -32,3 +45,5 @@ list.push("Hello")
 list.push("Goodbye")
 list.push("Dear")
 console.log(list)
+console.log(list.pop())
+console.log(list.pop())
