@@ -74,6 +74,16 @@ class SinglyLinkedList {
         }
         return pointer
     }
+
+    set(index,val){
+        let node = this.get(index)
+        if (node) {
+            node.val = val
+            return  true
+        } else {
+            return false
+        }
+    }
 }
 
 var list = new SinglyLinkedList()
@@ -86,7 +96,8 @@ var list2 = new SinglyLinkedList()
 console.log(list2.unshift("Cream"))
 console.log(list2.unshift("Whipped"))
 console.log(list2.unshift("Delicious"))
-console.log(list2.get(0))
-console.log(list2.get(2))
-console.log(list2.get(5))
+console.log(list2.set(0,"subpar"))
+console.log(list2)
+console.log(list2.set(7,"subpar"))
+
 
