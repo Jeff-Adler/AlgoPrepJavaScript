@@ -40,4 +40,6 @@ Time Complexity:
 - Searching: O(n)
 - Access: O(n)
 
-LinkedLists really just excel at insertion and removal
+LinkedLists really just excel at insertion and removal from the beginning (or just inserting at the end)
+
+Stacks and Queus are built on top of linked lists!!
