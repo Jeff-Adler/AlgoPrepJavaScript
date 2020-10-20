@@ -27,10 +27,31 @@ class DoublyLinkedList {
         this.length++
         return list
     }
+
+    pop(){
+        if (this.length === 0) return undefined
+        const removedNode = this.tail
+        if (this.length === 1) {
+            this.head = null
+            this.tail = null
+        } else {
+            this.tail = removedNode.prev
+            this.tail.next = null
+        }
+        this.length--
+        return removedNode
+    }
 }
 
 let list = new DoublyLinkedList
 list.push("Welcome")
-console.log(list)
+// console.log(list)
 list.push("Home")
+// console.log(list)
+list.push("Dog")
+list.pop()
+// console.log(list)
+// list.pop()
+// list.pop()
 console.log(list)
+
