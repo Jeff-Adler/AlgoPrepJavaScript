@@ -68,8 +68,25 @@ class DoublyLinkedList {
             newNode.next = this.head
             this.head = newNode
         }
-        length++
+        this.length++
         return this
+    }
+
+    get(index){
+        if (index < 0 || index >= this.length) return null
+        if (index <= Math.floor(this.length/2)) {
+            let currentNode = this.head
+            for (let i = 0 ; i < index ; i++) {
+                currentNode = currentNode.next
+            }
+            return currentNode
+        } else {
+            let currentNode = this.tail
+            for (let i = this.length - 1 ; i > index ; i--) {
+                currentNode = currentNode.prev
+            }
+            return currentNode
+        }
     }
 }
 
@@ -85,5 +102,12 @@ list.pop()
 // list.pop()
 list.shift()
 list.unshift("Welcome")
-console.log(list)
-
+list.push("Home")
+list.push("Dog")
+// console.log(list)
+// console.log(list.get(0))
+// console.log(list.get(1))
+// console.log(list.get(2))
+// console.log(list.get(3))
+// console.log(list.get(4))
+// console.log(list)
