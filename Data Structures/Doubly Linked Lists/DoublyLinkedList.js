@@ -25,7 +25,7 @@ class DoublyLinkedList {
             this.tail = newNode
         }
         this.length++
-        return list
+        return this
     }
 
     pop(){
@@ -57,6 +57,20 @@ class DoublyLinkedList {
         this.length--
         return oldHead
     }
+
+    unshift(val){
+        const newNode = new Node(val)
+        if (this.length === 0) {
+            this.head = newNode
+            this.tail = newNode
+        } else {
+            this.head.prev = newNode
+            newNode.next = this.head
+            this.head = newNode
+        }
+        length++
+        return this
+    }
 }
 
 let list = new DoublyLinkedList
@@ -70,5 +84,6 @@ list.pop()
 // list.pop()
 // list.pop()
 list.shift()
+list.unshift("Welcome")
 console.log(list)
 
