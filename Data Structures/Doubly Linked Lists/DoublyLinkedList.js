@@ -37,6 +37,7 @@ class DoublyLinkedList {
         } else {
             this.tail = removedNode.prev
             this.tail.next = null
+            removedNode.prev = null
         }
         this.length--
         return removedNode
