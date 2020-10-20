@@ -97,6 +97,21 @@ class DoublyLinkedList {
         }
         return false
     }
+
+    insert(index,val){
+        if (index < 0 || index >= this.length) return null
+        if (index === 0) this.unshift(val)
+        if (index === this.length - 1) this.push(val)
+        let postNode = this.get(index)
+        let preNode = postNode.prev
+        let newNode = new Node(val)
+        preNode.next = newNode
+        postNode.prev = newNode
+        newNode.prev = preNode
+        newNode.next = postNode
+        this.length++
+        return true
+    }
 }
 
 let list = new DoublyLinkedList
@@ -114,9 +129,13 @@ list.unshift("Welcome")
 list.push("Home")
 list.push("Dog")
 // console.log(list)
-console.log(list.get(0))
-console.log(list.get(1))
-console.log(list.get(2))
-console.log(list.get(3))
-console.log(list.get(4))
+// console.log(list.get(0))
+// console.log(list.get(1))
+// console.log(list.get(2))
+// console.log(list.get(3))
+// console.log(list.get(4))
 // console.log(list)
+list.set(2,"Mr.")
+// console.log(list.get(2))
+list.insert(2, "sir")
+console.log(list.get(2))
