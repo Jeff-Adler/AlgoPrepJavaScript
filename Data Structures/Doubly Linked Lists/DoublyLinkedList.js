@@ -74,19 +74,28 @@ class DoublyLinkedList {
 
     get(index){
         if (index < 0 || index >= this.length) return null
+        let currentNode
         if (index <= Math.floor(this.length/2)) {
-            let currentNode = this.head
+            currentNode = this.head
             for (let i = 0 ; i < index ; i++) {
                 currentNode = currentNode.next
             }
-            return currentNode
         } else {
-            let currentNode = this.tail
+            currentNode = this.tail
             for (let i = this.length - 1 ; i > index ; i--) {
                 currentNode = currentNode.prev
             }
-            return currentNode
         }
+        return currentNode
+    }
+
+    set(index,val){
+        let node = this.get(index)
+        if (node) {
+            node.val = val
+            return true
+        }
+        return false
     }
 }
 
@@ -105,9 +114,9 @@ list.unshift("Welcome")
 list.push("Home")
 list.push("Dog")
 // console.log(list)
-// console.log(list.get(0))
-// console.log(list.get(1))
-// console.log(list.get(2))
-// console.log(list.get(3))
-// console.log(list.get(4))
+console.log(list.get(0))
+console.log(list.get(1))
+console.log(list.get(2))
+console.log(list.get(3))
+console.log(list.get(4))
 // console.log(list)
