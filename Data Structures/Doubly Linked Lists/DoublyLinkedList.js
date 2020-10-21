@@ -133,7 +133,7 @@ class DoublyLinkedList {
         this.tail = storedHead
         let current = this.head
         while (current !== null) {
-            nextTemp = current.next
+            let nextTemp = current.next
             current.next = current.prev
             current.prev = nextTemp
             current = current.next
