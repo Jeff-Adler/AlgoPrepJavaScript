@@ -15,9 +15,14 @@ BST Uses:
 
 Time Complexity:
 
+AVERAGE + BEST CASE:
+
 - Insertion: O(log n)
 - Searching: O(log n)
   - Since you have to increase by log of 2 to add more steps!
     - 2x # of nodes: 1 extra step
     - 4x # of nodes: 2 extra steps
     - 8x # of nodes: 3 extra steps
+
+WORST CASE:
+-if you have a BST that only contains, essentially, a singly linked list, since every value is just greater or smaller than the last, youll never shave off any nodes from the tree as search: - O(N)
