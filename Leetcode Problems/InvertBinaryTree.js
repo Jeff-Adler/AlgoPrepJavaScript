@@ -11,7 +11,6 @@
  * @return {TreeNode}
  */
 
-
 //Approach
 //1. Get the leftmost i.e. smallest value, and ge the rightmost i.e. largest value. Find every value in between. Add all these values to an array. Remake the tree in an inverted style
 
