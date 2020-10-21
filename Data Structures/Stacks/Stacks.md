@@ -18,3 +18,10 @@ Many Implementations -- Stack is just a concept:
   - arrays in general are overkill for stacks though, and a linked list is more efficient, and totally satisfactor
 - Some langs have built-in stack datatype. JS does not
 - Basic JS Stack: use a linkedlist
+
+Time Complexity:
+
+- Insertion: O(1)
+- Removal: O(1)
+- Searching: O(N)
+- Access: O(N)
