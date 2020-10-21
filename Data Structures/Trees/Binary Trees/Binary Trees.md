@@ -12,4 +12,12 @@ Binary Search Trees: (BST)
 BST Uses:
 
 - makes it very easy to look things up, and to insert
-  -
+
+Time Complexity:
+
+- Insertion: O(log n)
+- Searching: O(log n)
+  - Since you have to increase by log of 2 to add more steps!
+    - 2x # of nodes: 1 extra step
+    - 4x # of nodes: 2 extra steps
+    - 8x # of nodes: 3 extra steps
