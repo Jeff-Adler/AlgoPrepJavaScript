@@ -85,6 +85,20 @@ class BinarySearchTree {
         }
         return true
     }
+
+    BFS() {
+        if (!this.root) return null
+        const queue = []
+        const vals = []
+        queue.unshift(this.root)
+        while (queue.length) {
+            let dequeued = queue.pop()
+            vals.push(dequeued.val)
+            if (dequeued.left){queue.unshift(dequeued.left)}
+            if (dequeued.right){queue.unshift(dequeued.right)}
+        }
+        return vals
+    }
 }
 
 const bst = new BinarySearchTree
@@ -99,3 +113,4 @@ bst.insert(4)
 // console.log(bst.find(4))
 // console.log(bst.find(1))
 // console.log(bst.find(6))
+console.log(bst.BFS())
