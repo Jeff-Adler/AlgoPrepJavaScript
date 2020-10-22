@@ -51,7 +51,7 @@ Radix Sort
 
 Best you can get for data-agnostic sorting: O(n log n)
 
-- Mathematocal proof about comparison sorting!!! Impossible to do better than O(log n)
+- Mathematocal proof about comparison sorting!!! Impossible to do better than O(n log n)
 
 - Radix Sort: NOT a comparison sort
   - escapes lower bound on comparison sorting of O(n log n)

@@ -9,8 +9,9 @@ Time Complexity: O(n) (best: O(1), worst: O(n), average: O(n))
 - findIndex
 
 Binary search on sorted array:
-find entry at midpoint of SORTED array, if target is less than entry, take first half of array. if target is more than entry,
-take second half of array. Repeat this recursively
+
+- find entry at midpoint of SORTED array, if target is less than entry, take first half of array. if target is more than entry,
+- take second half of array. Repeat this recursively
 
 Time Complexity: O(log n)
 
