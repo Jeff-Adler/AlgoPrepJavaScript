@@ -124,6 +124,18 @@ class BinarySearchTree {
         traverse(current)
         return vals
     }
+
+    DFSInOrder(){
+        const vals = []
+        let current = this.root
+        function traverse(node) {
+            if (node.left) traverse(node.left)
+            vals.push(node.val)
+            if (node.right) traverse(node.right)
+        }
+        traverse(current)
+        return vals
+    }
 }
 
 const bst = new BinarySearchTree
@@ -141,3 +153,4 @@ bst.insert(4)
 // console.log(bst.BFS())
 console.log(bst.DFSPreOrder())
 console.log(bst.DFSPostOrder())
+console.log(bst.DFSInOrder())
