@@ -90,13 +90,38 @@ class BinarySearchTree {
         if (!this.root) return null
         const queue = []
         const vals = []
-        queue.unshift(this.root)
+        let node = this.root
+        queue.push(node)
         while (queue.length) {
-            let dequeued = queue.pop()
-            vals.push(dequeued.val)
-            if (dequeued.left){queue.unshift(dequeued.left)}
-            if (dequeued.right){queue.unshift(dequeued.right)}
+            node = queue.shift()
+            vals.push(node.val)
+            if (node.left){queue.push(node.left)}
+            if (node.right){queue.push(node.right)}
         }
+        return vals
+    }
+
+    DFSPreOrder(){
+        const vals = []
+        let current = this.root
+        function traverse(node) {
+            vals.push(node.val)
+            if (node.left) traverse(node.left)
+            if (node.right) traverse(node.right)
+        }
+        traverse(current)
+        return vals
+    }
+
+    DFSPostOrder(){
+        const vals = []
+        let current = this.root
+        function traverse(node) {
+            if (node.left) traverse(node.left)
+            if (node.right) traverse(node.right)
+            vals.push(node.val)
+        }
+        traverse(current)
         return vals
     }
 }
@@ -113,4 +138,6 @@ bst.insert(4)
 // console.log(bst.find(4))
 // console.log(bst.find(1))
 // console.log(bst.find(6))
-console.log(bst.BFS())
+// console.log(bst.BFS())
+console.log(bst.DFSPreOrder())
+console.log(bst.DFSPostOrder())

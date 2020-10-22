@@ -10,7 +10,7 @@ Given any tree (not necessarily sorted), how do we visit every node in a tree?
       - if there is left property on the last dequeued node, put it in the queue
       - if there is right property, put it in the queue
     - Return visited
-- Depth-first Search (DFS)
+- Depth-first Search (DFS): 3 steps for all implenetations: 1. Visit/record current node, 2. Explore entire left side, 3 Explore entire right side
   - InOrder
-  - Preorder: start from top, work our way to the bottom, left than right
+  - Preorder: start from top, traverse the entire left, then entire right. And, this applies for EVERY node. So it means youll trickle down the bottom and not go to the right side of any nodes till the left side has been fully explored.
   - Postorder: start from bottom left, work our way to the top
