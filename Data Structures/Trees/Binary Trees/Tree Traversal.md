@@ -14,3 +14,21 @@ Given any tree (not necessarily sorted), how do we visit every node in a tree?
   - InOrder
   - Preorder: start from top, traverse the entire left, then entire right. And, this applies for EVERY node. So it means youll trickle down the bottom and not go to the right side of any nodes till the left side has been fully explored.
   - Postorder: start from bottom left, work our way to the top
+
+When to use BFS vs DFS:
+
+- Same time complexity!
+
+- but, Space Complexity differs:
+
+  - Even if binary, a large, fully fleshed out tree, will get very very wide by e.g. the 6 layer. Thus **BFS will require a more memory than DFS, since youll hold many values in the queue**
+
+DFS:
+
+- better for large, fleshed out tree, to save memory (although time complexity is the same)
+
+PreOrder vs PostOrder vs InOrder:
+
+- PreOrder: useful when you want to preserve/export/flattern the tree structure, since it returns the order that will create the same tree
+- InOrder: returns values for a BST from smallest to highest! So if you want values to be ordered, inorder is nice. (maybe good to store to DB?)
+  - DOes not preserve the root though, so not good if you need to recreate the tree
