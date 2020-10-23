@@ -44,6 +44,37 @@ var sumEvenGrandparent = function(root) {
         }
     
     return sum;
+
+    //Amazon onsite requires you do the problem without recursion:
+    // let sum = 0
+    // getEvenGrandchildren(root)
+    // function getEvenGrandchildren(node) {
+    //     let queue = [node]
+        
+    //     while (queue.length) {
+    //         let node = queue.shift()
+            
+    //         if (node.val % 2 === 0) {
+    //             if (node.left?.left?.val) {
+    //                 sum += node.left.left.val;
+    //             }
+    //             if (node.left?.right?.val) {
+    //                 sum += node.left.right.val;
+    //             }
+    //             if (node.right?.right?.val) {
+    //                 sum += node.right.right.val;
+    //             }
+    //             if (node.right?.left?.val) {
+    //                 sum += node.right.left.val;
+    //             }
+    //         }
+            
+    //         if (node.left) queue.push(node.left)
+    //         if (node.right) queue.push(node.right)
+    //     }
+    // }
+    
+    // return sum
         
     //Solution 2
     // let grandchildren = [];
