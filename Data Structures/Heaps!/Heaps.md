@@ -22,3 +22,8 @@ Implementing an binary head:
     - Right child is stored at 2n + 2
     - You can also get a parent node from a child!
       - for child at n, parent is at Math.floor((n-1)/2)
+
+Inserting into MaxBinaryHeap:
+
+- insert at end (end = first available child slot working left to right; push into end of array) and percolate up till it's in right place
+  - compare value to parent, and swap if necessary (i.e. if child is greater than parent)
