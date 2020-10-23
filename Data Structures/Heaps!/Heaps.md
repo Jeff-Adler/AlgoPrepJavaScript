@@ -34,3 +34,14 @@ Primary Use:
   - insert a new item by priority: heap.insert
   - remove item by priority: heap.extractMax/extarctMin
   - need to use nodes as opposed to simple numeric values
+
+Time Complexity:
+
+- Insertion: O(log n)
+- Removal: O(log n)
+  - to increase the number of operations to bubble up and bubble down, we have to add 2 ^ n nodes
+  - Totally avoids the worst case situation for binary trees, where the tree ends up being a linked list (cause values keep being smaller or higher)
+- Search: O(N) -- probably not using a heap to search
+  - you can sometimes eliminates parts of tree, if search number is between values of two chlidren, but worst case is O(n).
+
+If your data will come through sorted, you probably don't need to use a binary heap. But, if your data is unsorted, and you need to quickly be able to retrieve and remove max value (as in a priority queue), they're useful
