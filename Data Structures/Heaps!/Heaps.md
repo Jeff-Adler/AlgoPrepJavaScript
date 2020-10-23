@@ -27,3 +27,10 @@ Inserting into MaxBinaryHeap:
 
 - insert at end (end = first available child slot working left to right; push into end of array) and percolate up till it's in right place
   - compare value to parent, and swap if necessary (i.e. if child is greater than parent)
+
+Primary Use:
+
+- Priority Queue: Sorting objects by 'priority'
+  - insert a new item by priority: heap.insert
+  - remove item by priority: heap.extractMax/extarctMin
+  - need to use nodes as opposed to simple numeric values
