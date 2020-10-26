@@ -23,3 +23,17 @@ UTF character codes: special code associated with characters
 - could add together all UTF values in a string
 - subtract 96 from alphabetic's character's code to get position in alphabet (i.e. 1 for a, 26 for z)
 - use modulo arrayLen to get index
+
+Time Complexity:
+
+- Insert: O(1)
+- Deletion: O(1)
+- Access: O(1)
+
+Hash tables: (non-cryptographically secure)
+
+- should be fast
+- distribute keys uniformly
+- be deterministic
+
+Separate chaining and linear probing: two strategies used to deal with 2 keys that hash to the same index
