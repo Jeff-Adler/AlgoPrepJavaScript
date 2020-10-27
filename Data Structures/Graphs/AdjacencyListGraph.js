@@ -27,6 +27,24 @@ class Graph {
         }
         delete this.adjacencyList[vertex]
     }
+
+    DFSRecursive(vertex) {
+        let results = []
+        let visited = {}
+        const adjacencyList = this.adjacencyList
+
+        function DFS(vertex) {
+            if (!vertex) return
+            visited[vertex] = true
+            results.push(vertex)
+            for (let i = 0 ; i < adjacencyList[vertex].length ; i++) {
+                if (!visited[adjacencyList[vertex][i]]) DFS(adjacencyList[vertex][i])
+            }
+        }
+
+        DFS(vertex)
+        return results
+    }
 }
 
 const graph = new Graph()
@@ -34,7 +52,35 @@ const graph = new Graph()
 graph.addVertex("Tokyo")
 graph.addVertex("Yokohama")
 graph.addVertex("Osaka")
+graph.addVertex("Sapporo")
+graph.addVertex("Kyoto")
+graph.addVertex("Fukuoka")
 graph.addEdge("Tokyo","Yokohama")
 graph.addEdge("Tokyo","Osaka")
-// graph.removeVertex("Tokyo")
-console.log(graph.getAdjacencyList())
+graph.addEdge("Tokyo","Sapporo")
+graph.addEdge("Tokyo","Kyoto")
+graph.addEdge("Tokyo","Fukuoka")
+graph.addEdge("Osaka","Kyoto")
+graph.addEdge("Osaka","Fukuoka")
+graph.addEdge("Osaka","Sapporo")
+graph.addEdge("Osaka","Yokohama")
+graph.addEdge("Fukuoka","Yokohama")
+// console.log(graph.getAdjacencyList())
+
+const g = new Graph()
+g.addVertex("A")
+g.addVertex("B")
+g.addVertex("C")
+g.addVertex("D")
+g.addVertex("E")
+g.addVertex("F")
+
+g.addEdge("A", "B")
+g.addEdge("A", "C")
+g.addEdge("B", "D")
+g.addEdge("C", "E")
+g.addEdge("D", "E")
+g.addEdge("D", "F")
+g.addEdge("E", "F")
+console.log(g.getAdjacencyList())
+console.log(g.DFSRecursive("A"))
