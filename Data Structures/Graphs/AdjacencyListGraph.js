@@ -20,6 +20,13 @@ class Graph {
         this.adjacencyList[vertex1] = this.adjacencyList[vertex1].filter((vertex) => vertex !== vertex2 )
         this.adjacencyList[vertex2] = this.adjacencyList[vertex2].filter((vertex) => vertex !== vertex1 )
     }
+
+    removeVertex(vertex) {
+        while (this.adjacencyList[vertex].length) {
+           this.removeEdge(vertex, this.adjacencyList[vertex][0])
+        }
+        delete this.adjacencyList[vertex]
+    }
 }
 
 const graph = new Graph()
@@ -29,5 +36,5 @@ graph.addVertex("Yokohama")
 graph.addVertex("Osaka")
 graph.addEdge("Tokyo","Yokohama")
 graph.addEdge("Tokyo","Osaka")
-graph.removeEdge("Tokyo","Yokohama")
+graph.removeVertex("Tokyo")
 console.log(graph.getAdjacencyList())
