@@ -67,6 +67,27 @@ class Graph {
         return result;
     }
 
+    BFS(start){
+        const queue = [start];
+        const result = [];
+        const visited = {};
+        let currentVertex;
+        visited[start] = true;
+
+        while(queue.length){
+            currentVertex = queue.shift();
+            result.push(currentVertex);
+           
+
+            this.adjacencyList[currentVertex].forEach(neighbor => {
+                if(!visited[neighbor]){
+                    visited[neighbor] = true;
+                    queue.push(neighbor);
+                }
+            });
+        }
+        return result;
+    }
 }
 
 const graph = new Graph()
@@ -90,6 +111,7 @@ graph.addEdge("Fukuoka","Yokohama")
 console.log(graph.getAdjacencyList())
 console.log(graph.DFSRecursive("Tokyo"))
 console.log(graph.DFSIterative("Tokyo"))
+console.log(graph.BFS("Tokyo"))
 
 
 const g = new Graph()
@@ -110,3 +132,4 @@ g.addEdge("E", "F")
 console.log(g.getAdjacencyList())
 console.log(g.DFSRecursive("A"))
 console.log(g.DFSIterative("A"))
+console.log(g.BFS("A"))
