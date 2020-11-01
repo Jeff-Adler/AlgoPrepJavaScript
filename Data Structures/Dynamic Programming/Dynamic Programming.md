@@ -21,3 +21,10 @@ Normal runtime for recursive Fibonacci Sequence solution: O(2^N)!!
 Memoization: Storing the results of expensive function calls and returning the cached result when the same inputs occur again
 
 Time Complexity: VASTLY improves time complexity
+
+Top-down vs Bottom-up DP:
+
+- Top-down: Start with Fib(7) and move down
+- Bottom-up: "tabulation"
+  - uses iteration, not recursion
+  - has better space complexity
