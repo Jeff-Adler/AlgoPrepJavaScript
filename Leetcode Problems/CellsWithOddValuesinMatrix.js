@@ -6,7 +6,10 @@
  */
 var oddCells = function(n, m, indices) {
     
-    var arr = [...Array(n)].fill([...Array(m)].fill(0))
+    var arr = [...Array(n)]
+    for (let k = 0 ; k < arr.length ; k++) {
+        arr[k] = ([...Array(m)].fill(0))
+    }
 
     for (let l = 0 ; l < indices.length ; l++) {
         //increment row
@@ -19,7 +22,7 @@ var oddCells = function(n, m, indices) {
             arr[j][indices[l][1]]++
         }
     }
-    return arr
+    return arr.flat().filter(val => {return val % 2 !== 0}).length
 };
 
 console.log(oddCells(2,3,[[0,1],[1,1]]))
