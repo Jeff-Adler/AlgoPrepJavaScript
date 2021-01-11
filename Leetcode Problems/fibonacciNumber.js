@@ -11,3 +11,11 @@ var fib = function(n) {
     
     return fibArr[n]
 };
+
+var fibRec = function(n) {
+    if (n <= 1) {
+        return n;
+    } else {
+        return fibRec(n - 1) + fibRec(n - 2);
+    }
+};
