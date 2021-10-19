@@ -33,4 +33,4 @@ const romanToInt = function(s) {
     return total
 };
 
-romanToInt("III")
+console.log(romanToInt("MCMXCIV"))
