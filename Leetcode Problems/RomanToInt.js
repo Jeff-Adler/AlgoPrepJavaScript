@@ -20,8 +20,17 @@ const romanToInt = function(s) {
 
     for (let i = s.length - 1; i >= 0; i--) {
       console.log(s[i])
+      const precedingAndCurrentCharacter = i > 0 ? `${s[i-1]}${s[i]}` : ''
 
+      if (precedingAndCurrentCharacter && romanToIntConversionTable[precedingAndCurrentCharacter]) {
+        total += romanToIntConversionTable[precedingAndCurrentCharacter]
+        i--
+      } else {
+        total += romanToIntConversionTable[s[i]]
+      }
     }
+
+    return total
 };
 
 romanToInt("III")
