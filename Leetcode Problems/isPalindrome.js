@@ -20,3 +20,9 @@ var isPalindrome = function(x) {
 };
 
 console.log(isPalindrome(121))
+
+var isPalindrome2 = function(x) {
+  const original = x.toString();
+  const reversed = x.toString().split("").reverse().join("");
+  return original === reversed;
+};
