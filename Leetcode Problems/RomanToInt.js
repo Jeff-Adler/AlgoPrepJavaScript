@@ -13,7 +13,7 @@ const romanToInt = function(s) {
     "XL" : 40,
     "XC" : 90,
     "CD" : 400,
-    "CM" : 1000
+    "CM" : 900
   }
 
   let total = 0
@@ -28,7 +28,6 @@ const romanToInt = function(s) {
         total += romanToIntConversionTable[s[i]]
       }
     }
-
     return total
 };
 
