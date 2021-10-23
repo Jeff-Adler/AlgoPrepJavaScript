@@ -1,9 +1,15 @@
 var isPalindrome = function(x) {
+  if (x < 0) {
+    return false
+  }
+
+  const num = x.toString()
+
   let i = 0;
-  let j = x.length - 1;
+  let j = num.length - 1;
   
-  while (i != j) {
-    if (x[i] != x[j]) {
+  while (i < j) {
+    if (num[i] != num[j]) {
       return false
     }
     i++
@@ -12,3 +18,5 @@ var isPalindrome = function(x) {
 
   return true
 };
+
+console.log(isPalindrome(121))
