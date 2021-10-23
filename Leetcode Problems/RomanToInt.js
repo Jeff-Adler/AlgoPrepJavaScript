@@ -1,6 +1,6 @@
 const romanToInt = function(s) {
 
-  const romanToIntConversionTable = {
+  const map = {
     "I" : 1,
     "V" : 5,
     "X" : 10,
@@ -21,11 +21,11 @@ const romanToInt = function(s) {
     for (let i = s.length - 1; i >= 0; i--) {
       const precedingAndCurrentCharacter = i > 0 ? `${s[i-1]}${s[i]}` : ''
 
-      if (precedingAndCurrentCharacter && romanToIntConversionTable[precedingAndCurrentCharacter]) {
-        total += romanToIntConversionTable[precedingAndCurrentCharacter]
+      if (precedingAndCurrentCharacter && map[precedingAndCurrentCharacter]) {
+        total += map[precedingAndCurrentCharacter]
         i--
       } else {
-        total += romanToIntConversionTable[s[i]]
+        total += map[s[i]]
       }
     }
     return total
