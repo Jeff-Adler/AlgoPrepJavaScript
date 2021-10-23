@@ -11,10 +11,7 @@ const twoSum = function(nums,target) {
     }
 
     numberMap[number] = i 
-    console.log(numberMap)
   }
-
-  return
 }
 
 console.log(twoSum([2,7,11,15], 9))
