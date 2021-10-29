@@ -1,5 +1,5 @@
 const finalValueAfterOperations = (arr) => {
-  return operations.reduce((final, operation) => {
+  return arr.reduce((final, operation) => {
     return final + (operation.includes("++") ? 1 : -1);
   }, 0);
 };
