@@ -11,17 +11,20 @@ const isValid = (str) => {
   }
 
   let i = 0
-  let j = str.length - 1
+  let stack = []
 
-  while (j > i) {
-    if (dict[str[i]] !== str[j]) {
+  while (i < str.length) {
+    if (Object.keys(dict).includes(str[i])) {
+      stack.push(str[i])
+    } else if (dict[stack[stack.length - 1]] === str[i]) {
+      stack.pop()
+    } else {
       return false;
     }
     i++
-    j--
   }
 
-  return true
+  return stack.length === 0
 }
 
 const result = isValid('{[]}')
