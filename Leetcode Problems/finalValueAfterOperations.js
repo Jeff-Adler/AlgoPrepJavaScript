@@ -1,15 +1,7 @@
 const finalValueAfterOperations = (arr) => {
-  let x = 0;
-
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === "++X" || arr[i] == "X++") {
-      x++;
-    } else {
-      x--;
-    }
-  }
-
-  return x;
+  return operations.reduce((final, operation) => {
+    return final + (operation.includes("++") ? 1 : -1);
+  }, 0);
 };
 
 const result = finalValueAfterOperations(["++X", "++X", "X++"]);
