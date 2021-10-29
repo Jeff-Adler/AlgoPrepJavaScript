@@ -1,6 +1,5 @@
 const secondHighestDigit = (s) => {
   const numbers = s.split('').filter((character) => {
-    console.log(parseInt(character));
     return !isNaN(parseInt(character));
   });
 
